@@ -27,6 +27,14 @@
       font-size: 14px;
       color: #555;
     }
+
+
+    #kofi-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+    }
   </style>
 </head>
 <body>
@@ -40,6 +48,12 @@
     </footer>
   </div>
 
+  <div id="kofi-widget"></div>
+  <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+  <script type='text/javascript'>
+    kofiwidget2.init('Support me on Ko-fi', '#72a4f2', 'Y8Y01IAZ3Y');
+    kofiwidget2.draw('kofi-widget');
+  </script>
+
 </body>
 </html>
-
