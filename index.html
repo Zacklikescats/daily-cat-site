@@ -3,6 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Today's Daily Cat</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -11,36 +21,35 @@
       padding: 0;
       background-color: #fffafc;
     }
+
     .container {
       max-width: 800px;
       margin: auto;
       padding: 20px;
     }
+
     img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
+
     footer {
       margin-top: 40px;
       font-size: 14px;
       color: #555;
     }
 
-
-#kofi-widget {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  width: 200px;    
-  height: 60px;     
-  background: rgba(0, 143, 50, 0.1);
-  border: 1px solid #008f32;
-  border-radius: 8px;
-}
-
+    #kofi-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      width: 200px;
+      height: 60px;
+      /* Removed translucent background and border */
+    }
   </style>
 </head>
 <body>
@@ -54,12 +63,12 @@
     </footer>
   </div>
 
-<div id="kofi-widget"></div>
-<script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
-<script type='text/javascript'>
-  kofiwidget2.init('Support me on Ko-fi', '#008f32', 'Y8Y01IAZ3Y');
-  kofiwidget2.draw('kofi-widget');
-</script>
+  <div id="kofi-widget"></div>
+  <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+  <script type='text/javascript'>
+    kofiwidget2.init('Support me on Ko-fi', '#008f32', 'Y8Y01IAZ3Y');
+    kofiwidget2.draw('kofi-widget');
+  </script>
 
 </body>
 </html>
