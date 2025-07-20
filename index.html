@@ -1,38 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Today's Daily Cat</title>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
-
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       margin: 0;
       padding: 0;
-      background-color: #fffafc;
+      background-color: #fff4e6;
+      font-size: 16px;
+      line-height: 1.5;
     }
 
     .container {
       max-width: 800px;
       margin: auto;
-      padding: 20px;
+      padding: 20px 15px;
     }
 
     img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 100%;
     }
 
     footer {
@@ -41,13 +35,25 @@
       color: #555;
     }
 
-    #kofi-widget {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 9999;
-      width: 200px;
-      height: 60px;
+    .kofi-widget-container {
+      bottom: 40px !important;
+      right: 40px !important;
+    }
+
+    #date {
+      font-size: 16px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 22px;
+      }
+
+      footer {
+        font-size: 12px;
+      }
     }
   </style>
 </head>
@@ -55,18 +61,27 @@
 
   <div class="container">
     <h1>Today's Daily Cat: </h1>
-    <img src="cat.jpg" alt="Today's Cat">
+    <p id="date">📅 Loading date...</p>
+    <img src="cat.jpg" alt="Today's Cat" />
     <footer>
       Want your cat featured? Send it to:  
-      <a href="mailto:PleaseFeatureMyCat@gmail.com">PleaseFeatureMyCat@gmail.com</a>
+      <a href="mailto:PleaseFeatureMyCat@gmail.com">PleaseFeatureMyCat@gmail.com</a><br>
+      “If you stroke a cat a day, you will be happy - HOORAY!”
     </footer>
   </div>
 
-  <div id="kofi-widget"></div>
-  <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
-  <script type='text/javascript'>
+  <!-- Date script -->
+  <script>
+    const today = new Date();
+    document.getElementById("date").innerText =
+    today.toDateString();
+  </script>
+
+  <!-- Ko-fi widget -->
+  <script src="https://storage.ko-fi.com/cdn/widget/Widget_2.js"></script>
+  <script>
     kofiwidget2.init('Support me on Ko-fi', '#008f32', 'Y8Y01IAZ3Y');
-    kofiwidget2.draw('kofi-widget');
+    kofiwidget2.draw();
   </script>
 
 </body>
